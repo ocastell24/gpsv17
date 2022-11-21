@@ -1,25 +1,28 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+
+//para el geo
+//import { Amplify } from 'aws-amplify';
+//import awsconfig from './aws-exports';
+//para el geo
+
+import { Route } from 'react-router-dom';
+
+//Amplify.configure(awsconfig);//para el geo
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>We now have Auth!</h1>
+      
       </header>
+
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
